@@ -30,7 +30,7 @@ const TodoList = () => {
     }
   };
 
-  const removeTask = (index) => {
+  const removeTodos = (index) => {
     const updatedtodos = todos.filter((_, i) => i !== index);
     settodos(updatedtodos);
     if (editIndex === index) {
@@ -38,14 +38,14 @@ const TodoList = () => {
     }
   };
 
-  const editTask = (index) => {
+  const editTodos = (index) => {
     setInputValue(todos[index]);
     setEditIndex(index);
   };
 
   return (
     <div className="todo-container">
-      <h1 className="todo-header">To-Do List</h1>
+      <h1 className="todo-header">Todo List</h1>
       <div>
         <input
           className="task-input"
@@ -76,8 +76,8 @@ const TodoList = () => {
               </button>
             ) : (
               <>
-                <button onClick={() => editTask(index)}>Edit</button>
-                <button onClick={() => removeTask(index)}>Remove</button>
+                <button onClick={() => editTodos(index)}>Edit</button>
+                <button onClick={() => removeTodos(index)}>Remove</button>
               </>
             )}
           </li>
